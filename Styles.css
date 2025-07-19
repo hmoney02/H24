@@ -1,0 +1,287 @@
+/* css/style.css */
+
+/* --- Import des polices Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* --- Styles Généraux --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    padding-top: 70px; /* Pour compenser la navbar fixe */
+    padding-bottom: 70px; /* Pour compenser le footer fixe */
+    background-color: #f8f8f8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #5C4033; /* Couleur thème marron foncé */
+}
+
+a {
+    color: #8B4513; /* Marron clair pour les liens */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #A0522D; /* Un peu plus foncé au survol */
+    text-decoration: underline;
+}
+
+/* --- Navbar Personnalisée --- */
+.navbar-dark.bg-dark {
+    background-color: #362828 !important; /* Couleur de fond de la navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #FFD700 !important; /* Or pour le nom du restaurant */
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin-left: 15px;
+    color: rgba(255, 255, 255, 0.75) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FFD700 !important; /* Or au survol et pour l'active */
+}
+
+/* --- Section Héro (Accueil) --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/images1.jpg') no-repeat center center/cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Boutons --- */
+.btn-primary {
+    background-color: #8B4513; /* Marron clair */
+    border-color: #8B4513;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #A0522D; /* Marron plus foncé */
+    border-color: #A0522D;
+}
+
+.btn-outline-primary {
+    color: #8B4513;
+    border-color: #8B4513;
+}
+
+.btn-outline-primary:hover {
+    background-color: #8B4513;
+    color: white;
+}
+
+/* --- Sections Générales --- */
+section {
+    padding: 60px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: #f0f0f0; /* Alternance de couleurs de fond pour les sections */
+}
+
+/* --- Cards Améliorées --- */
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden; /* Pour les images dans les cards */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: #5C4033;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #666;
+}
+
+/* --- Menu Page Spécifique --- */
+.menu-category-tabs .nav-link {
+    color: #5C4033 !important;
+    border: 1px solid #5C4033;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.menu-category-tabs .nav-link.active {
+    background-color: #8B4513 !important;
+    color: white !important;
+    border-color: #8B4513;
+}
+
+.menu-item-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item-card .card-text.price {
+    font-weight: bold;
+    color: #8B4513;
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+/* --- Galerie / Témoignages --- */
+.carousel-item img {
+    height: 500px; /* Hauteur fixe pour les images du carousel */
+    object-fit: cover;
+    width: 100%;
+}
+
+.testimonial-card {
+    min-height: 220px; /* Hauteur minimale pour aligner les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card .card-title {
+    margin-bottom: 5px;
+}
+
+.testimonial-card .stars {
+    color: #FFD700; /* Couleur or pour les étoiles */
+    margin-bottom: 10px;
+}
+
+/* --- Formulaire de Contact/Réservation --- */
+.form-label {
+    font-weight: bold;
+    color: #5C4033;
+}
+
+.form-control:focus {
+    border-color: #8B4513;
+    box-shadow: 0 0 0 0.25rem rgba(139, 69, 19, 0.25); /* Ombre de focus */
+}
+
+/* --- Carte Google Maps Responsive --- */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    position: relative;
+    height: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* --- Footer Fixe --- */
+footer {
+    background-color: #362828 !important; /* Couleur de fond du footer */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1030; /* Assurez-vous qu'il est au-dessus du contenu */
+}
+
+footer a {
+    color: #FFD700;
+}
+
+footer a:hover {
+    color: #FFF;
+}
+
+/* --- Media Queries pour le Responsive Design --- */
+
+/* Ajustements pour les petits écrans (smartphones) */
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: 400px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .map-responsive {
+        padding-bottom: 75%; /* Ratio 4:3 pour les petits écrans si préféré */
+    }
+
+    .testimonial-card {
+        margin-bottom: 20px; /* Espacement entre les témoignages sur mobile */
+    }
+}
+
+/* Ajustements pour les écrans moyens (tablettes) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section {
+        min-height: 500px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+}
